@@ -21,9 +21,9 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-[#0F1622] p-10 w-full font-sans">
+    <footer className="bg-[#1d242c] p-10 w-full font-sans">
       <div className=" max-w-6xl mx-auto">
-        <div className=" flex flex-col md:flex-row  justify-between gap-10 pb-10 border-b border-gray-800">
+        <div className=" flex flex-col md:flex-row  justify-between gap-10 pt-12 border-b border-gray-800">
           <div className=" flex flex-col gap-5 max-w-xs">
             <Link href="/">
               <Image
@@ -35,7 +35,7 @@ export default function Footer() {
                 className="brightness-0 invert"
               />
             </Link>
-            <p className="text-[14px] font-poppins   text-white">
+            <p className="text-[14px] font-poppins text-[#E1E4E8]">
               Driving digital growth through strategy, design, and technology.
             </p>
 
@@ -63,13 +63,13 @@ export default function Footer() {
             <h3 className="text-white font-semibold font-poppins  text-[16px]">
               Navigation
             </h3>
-            <ul className="flex flex-col gap-3 font-poppins  text-[14px] ">
+            <ul className="flex flex-col gap-3 font-poppins text-[14px] ">
               {links.map((link) => {
                 return (
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="hover:text-white transition-colors duration-200 block"
+                      className="text-[#E1E4E8]  hover:text-gray-400 transition-colors duration-200 block"
                     >
                       {link.name}
                     </Link>
@@ -86,7 +86,7 @@ export default function Footer() {
               <IoIosMail className="h-6 w-6" />
               <a
                 href="mailto:info@accelerating.digital"
-                className="hover:text-white text-[14px] transition-colors"
+                className="text-[14px] text-[#E1E4E8]  hover:text-gray-400 transition-colors"
               >
                 info@accelerating.digital
               </a>
@@ -95,18 +95,18 @@ export default function Footer() {
               <MdOutlinePhone className="h-6 w-6" />
               <a
                 href="tel:+917982740028"
-                className="hover:text-white transition-colors text-[14px]"
+                className="text-[#E1E4E8]  hover:text-gray-400 transition-colors text-[14px]"
               >
                 +91-798-274-0028
               </a>
             </li>
-            <li className="flex items-center gap-3 font-poppins  text-[14px]">
+            <li className="flex items-center gap-3 font-poppins text-[#E1E4E8]  hover:text-gray-400 text-[14px]">
               <IoLocationOutline className="h-6 w-6" />
               US, UAE, India | Serving Clients Worldwide
             </li>
           </div>
         </div>
-        <p className="text-center text-xs font-poppins text-[14px] text-gray-500 pt-6">
+        <p className="text-center text-xs font-poppins text-[14px] pb-10 text-gray-500 pt-6">
           © {new Date().getFullYear()} All Rights Reserved.
         </p>
       </div>
