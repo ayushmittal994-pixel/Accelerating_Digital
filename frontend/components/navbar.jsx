@@ -4,10 +4,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { HiMenu, HiX } from "react-icons/hi";
+import { useState } from "react";
 
 export default function Navbar() {
   const pathname = usePathname();
-
+  const [open, setOpen] = useState(false);
   const links = [
     { name: "Home", href: "/" },
     { name: "Expertise", href: "/expertise" },
@@ -28,7 +30,7 @@ export default function Navbar() {
               priority
             />
           </Link>
-          <ul className="flex items-center gap-2 text-[16px]">
+          <ul className=" hidden md:flex items-center gap-2 text-[16px]">
             {links.map((link) => {
               const active = pathname === link.href;
               return (
@@ -52,11 +54,45 @@ export default function Navbar() {
           </ul>
           <Link
             href="/contact-us"
-            className="bg-black text-white font-semibold text-sm px-6 py-3 rounded-xl hover:bg-gray-600 transition-colors"
+            className=" hidden md:inline-block bg-black text-white font-semibold text-sm px-6 py-3 rounded-xl hover:bg-gray-600 transition-colors"
           >
             Contact Us
           </Link>
+          <button
+            className="md:hidden text-gray-800"
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
+          >
+            {open ? <HiX size={28} /> : <HiMenu size={28} />}
+          </button>
         </nav>
+        {open && (
+          <div className="md:hidden border-t border-gray-100 px-6 py-4 flex flex-col gap-2">
+            {links.map((link) => {
+              const active = pathname === link.href;
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  style={{ fontFamily: "Poppins, sans-serif" }}
+                  className={`px-4 py-2 rounded-lg text-[#1D252D] transition-colors ${
+                    active ? "bg-gray-100 font-medium" : "hover:bg-gray-50"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
+            <Link
+              href="/contact-us"
+              onClick={() => setOpen(false)}
+              className="bg-black text-white font-semibold text-sm px-6 py-3 rounded-xl text-center mt-2 hover:bg-gray-600 transition-colors"
+            >
+              Contact Us
+            </Link>
+          </div>
+        )}
       </header>
     </div>
   );
