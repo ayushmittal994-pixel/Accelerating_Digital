@@ -23,7 +23,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#1d242c] p-10 w-full font-sans">
       <div className=" max-w-6xl mx-auto">
-        <div className=" flex flex-col md:flex-row  justify-between gap-10 pt-12 border-b border-gray-800">
+        <div className=" flex flex-col md:flex-row  justify-between gap-10 pt-12  pb-5 border-b border-gray-600">
           <div className=" flex flex-col gap-5 max-w-xs">
             <Link href="/">
               <Image
