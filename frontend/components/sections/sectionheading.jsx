@@ -9,9 +9,10 @@ export default function SectionHeading({
   badgeBgClass = "",
 }) {
   return (
+    //if true than apply all after true or else put all "" means empty
     <div className={center ? "text-center max-w-4xl mx-auto" : ""}>
       <div
-        className={`inline-flex items-center gap-2 border border-[1]  rounded-xl px-3  ${center ? "justify-center" : ""} ${badgeBgClass}`}
+        className={`inline-flex items-center gap-2  border-[1]  rounded-xl px-3  ${center ? "justify-center" : ""} ${badgeBgClass}`}
       >
         <span className="text-[#1D252D] text-xl">✦</span>
         <span

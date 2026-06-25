@@ -18,7 +18,7 @@ export default function Navbar() {
     { name: "About Us", href: "/about-us" },
   ];
   return (
-    <div className="px-4 py-4">
+    <div className="px-4 py-4 z-50 ">
       <header className="max-w-6xl mx-auto bg-white border border-gray-200 rounded-2xl shadow-sm">
         <nav className="px-6 h-20 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3">

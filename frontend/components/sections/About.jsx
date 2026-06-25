@@ -3,9 +3,9 @@ import SectionHeading from "./sectionheading";
 export default function About() {
   return (
     <section
-      className={`bg-linear-to-b from-[#050709] to-[#2C3845] py-20 max-w-5xl mx-auto md:mx-auto rounded-3xl mb-30`}
+      className={`bg-linear-to-b from-[#050709] to-[#2C3845] py-20 max-w-6xl mx-auto md:mx-auto rounded-4xl mb-30`}
     >
-      <div className="max-w-5xl mx-auto md:mx-auto px-6 text-center">
+      <div className="max-w-6xl mx-auto md:mx-auto px-6 text-center">
         <SectionHeading
           label="A little about us"
           title="Who we are?"

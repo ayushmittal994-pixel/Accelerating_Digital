@@ -12,7 +12,7 @@ export default function Herosection() {
       </p>
       <div className="flex justify-center items-center gap-4 mt-10">
         <Link href="/expertise">
-          <button className="px-16 font-semibold rounded-3xl py-4 bg-black border-[4px] text-white border-[#e5e7eb] cursor-pointer">
+          <button className="px-16 font-semibold rounded-3xl py-4 bg-black border-[4px]  hover:bg-gray-700 text-white border-[#e5e7eb] cursor-pointer">
             Explore
           </button>
         </Link>
