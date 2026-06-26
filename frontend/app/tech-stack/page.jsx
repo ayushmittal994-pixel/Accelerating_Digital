@@ -1,6 +1,14 @@
 import { PiGreaterThan } from "react-icons/pi";
 import SectionHeading from "@/components/sections/sectionheading";
 import Link from "next/link";
+import TechStackComp from "./tech-stackcomp";
+import Cta from "@/components/sections/cta";
+
+const items = [
+  {
+    title: "Front-end Frameworks",
+  },
+];
 
 export default function TechStack() {
   return (
@@ -31,7 +39,8 @@ export default function TechStack() {
         </p>
         <p className="text-black pl-2 font-normal ">Tech Stack</p>
       </div>
-      ;
+      <TechStackComp />
+      <Cta />
     </main>
   );
 }

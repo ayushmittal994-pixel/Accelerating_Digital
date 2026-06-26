@@ -6,6 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { HiMenu, HiX } from "react-icons/hi";
 import { useState } from "react";
+import Button from "./button";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -52,12 +53,11 @@ export default function Navbar() {
               );
             })}
           </ul>
-          <Link
+          <Button
+            title="Contact Us"
             href="/contact-us"
-            className=" hidden md:inline-block bg-black text-white font-semibold text-sm px-6 py-3 rounded-xl hover:bg-gray-600 transition-colors"
-          >
-            Contact Us
-          </Link>
+            titleClass="px-8 py-3"
+          />
           <button
             className="md:hidden text-gray-800"
             onClick={() => setOpen(!open)}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Button from "../button";
 
 export default function Herosection() {
   return (
@@ -11,17 +12,16 @@ export default function Herosection() {
         brands move faster, smarter, and stronger in the digital age.
       </p>
       <div className="flex justify-center items-center gap-4 mt-10">
-        <Link href="/expertise">
-          <button className="px-16 font-semibold rounded-3xl py-4 bg-black border-[4px]  hover:bg-gray-700 text-white border-[#e5e7eb] cursor-pointer">
-            Explore
-          </button>
-        </Link>
-
-        <Link href="/contact-us">
-          <button className="  text-black font-semibold rounded-3xl px-14 py-4 bg-white border-[4px] border-[#e5e7eb] cursor-pointer">
-            Contact Us
-          </button>
-        </Link>
+        <Button
+          title="Explore"
+          href="/expertise"
+          titleClass="px-16 py-4 bg-white !text-black"
+        />
+        <Button
+          title="Contact Us"
+          href="/contact-us"
+          titleClass="px-12 py-4"
+        />
       </div>
     </section>
   );
