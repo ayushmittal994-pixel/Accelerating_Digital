@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { FaCheck } from "react-icons/fa6";
+import Button from "../button";
 export default function HowweworkReusable({
   label,
   title,
@@ -12,6 +13,8 @@ export default function HowweworkReusable({
   imageside = "right",
   titleclass = "",
   textclass = "",
+  showButton = true,
+  
 }) {
   const content = (
     <div className={`flex-1 `}>
@@ -42,9 +45,7 @@ export default function HowweworkReusable({
           </li>
         ))}
       </ul>
-      <button className="px-7 py-3 bg-black  font-semibold text-white hover:bg-gray-700 rounded-2xl cursor-pointer transition-colors mt-5">
-        Get Started
-      </button>
+      {showButton && <Button title="Get started"></Button>}
     </div>
   );
 
