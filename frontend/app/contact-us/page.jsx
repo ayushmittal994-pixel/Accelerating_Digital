@@ -2,6 +2,7 @@ import { PiGreaterThan } from "react-icons/pi";
 import SectionHeading from "@/components/sections/sectionheading";
 import Link from "next/link";
 import Form from "./form";
+import Breadcrumb from "@/components/breadcrumb";
 
 export default function Contact() {
   return (
@@ -23,15 +24,7 @@ export default function Contact() {
           labelClass="text-[16px]"
         ></SectionHeading>
       </section>
-      <div className=" max-w-7xl mx-auto py-8 flex items-center">
-        <Link href="/" className="text-[#137cc1] text-[16px]">
-          Home
-        </Link>
-        <p className="text-black pl-2">
-          <PiGreaterThan />
-        </p>
-        <p className="text-black pl-2 font-normal ">Tech Stack</p>
-      </div>
+      <Breadcrumb />
       <Form />
     </main>
   );

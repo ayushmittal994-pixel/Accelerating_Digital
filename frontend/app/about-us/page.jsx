@@ -6,6 +6,7 @@ import TestimonialCard from "@/components/sections/TestimonialCard";
 import Cards from "@/components/cards";
 import HowweworkReusable from "@/components/sections/HowweworkReusbale";
 import Cta from "@/components/sections/cta";
+import Breadcrumb from "@/components/breadcrumb";
 
 const blocks = [
   {
@@ -32,17 +33,7 @@ const blocks = [
 export default function About() {
   return (
     <main>
-      <div className=" max-w-7xl mx-auto py-8 px-6 flex items-center">
-        <Link href="/" className="text-[#137cc1] text-[16px]">
-          Home
-        </Link>
-        <p className="text-black pl-2">
-          <PiGreaterThan />
-        </p>
-        <p className="text-[#566470] font-poppins pl-2 font-normal ">
-          About Us
-        </p>
-      </div>
+      <Breadcrumb />
       <div className="max-w-7xl mx-auto md:mx-auto   mt-14">
         <div>
           <SectionHeading
