@@ -67,7 +67,13 @@ export default function LoginPage() {
             titleClass="flex items-center justify-center cursor-pointer"
           />
         </div>
+      
+        
       </div>
     </div>
+    
+    
   );
 }
+
+

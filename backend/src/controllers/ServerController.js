@@ -11,6 +11,7 @@ app.use(express.json());
 export const getHeathCheck = async (req, res) => {
   res.json({ status: "ok", message: "Server is running" });
 };
+
 export const adminLogin = async (req, res) => {
   const { email, password } = req.body || {};
   if (!email || !password) {
@@ -64,10 +65,12 @@ export const publicCaseStudiesbySlug = async (req, res) => {
 };
 
 export const AdminCaseStudies = async (req, res) => {
+
   try {
     const { rows } = await query(
       "SELECT * FROM case_studies ORDER BY created_at DESC",
     );
+
     res.json(rows);
   } catch (err) {
     console.error("Error fetching case studies:", err.message);
@@ -81,10 +84,12 @@ export const PostCaseStudies = async (req, res) => {
   if (!slug || !title) {
     return res.status(400).json({ message: "Slug and title is mandatory" });
   }
+
   try {
     const { rows } = await query(
       `Insert into case_studies (slug, title , client , summary , body , cover_image ,published)
       values ($1 , $2 , $3, $4, $5 ,$6, $7) RETURNING *`,
+      ///here we used null coalseceing in which if i dont writevalue that optional ?? null or whatever we write will appear there
       [
         slug,
         title,
@@ -114,6 +119,7 @@ export const UpdateCaseStudies = async (req, res) => {
     req.body || {};
   try {
     const { rows } = await query(
+      //we use coalecse so that if no other field are change data wont reflect null it will stay there
       `UPDATE case_studies
        SET slug = COALESCE($1, slug),
            title = COALESCE($2, title),
@@ -145,5 +151,3 @@ export const DeleteCaseStudies = async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 };
-
-

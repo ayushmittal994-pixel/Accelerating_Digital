@@ -56,6 +56,7 @@ export default function CaseStudyDetailPage() {
         />
 
         <div
+          // So [&>h2] is "style the h2 children of this element
           className="prose  max-w-5xl mx-auto md:mx-auto mt-10 text-[#485661] text-left
           [&>h2]:text-[24px] [&>h2]:font-normal [&>h2]:text-[#1d252d] [&>h2]:mt-10 [&>h2]:mb-3
             [&>p]:mb-6 [&>p]:leading-relaxed"

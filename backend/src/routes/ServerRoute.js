@@ -10,17 +10,23 @@ import {
   PostCaseStudies,
   UpdateCaseStudies,
   DeleteCaseStudies,
+  getHeathCheck,
 } from "../controllers/ServerController.js";
 
 //this all are public end points
 router.get("/api/case-studies", publicCaseStudies);
 router.get("/api/case-studies/:slug", publicCaseStudiesbySlug);
 router.post("/api/auth/login", adminLogin);
-
+router.get("/", getHeathCheck);
 //Protected Routes
-router.post("/api/admin/case-studies/add", requireAuth, PostCaseStudies);
+
+router.post("/api/admin/case-studies", requireAuth, PostCaseStudies);
 router.get("/api/admin/case-studies", requireAuth, AdminCaseStudies);
 router.put("/api/admin/case-studies/:id", requireAuth, UpdateCaseStudies);
-router.delete("/api/admin/case-studies/delete/:id", requireAuth, DeleteCaseStudies);
+router.delete(
+  "/api/admin/case-studies/:id",
+  requireAuth,
+  DeleteCaseStudies,
+);
 
 export default router;

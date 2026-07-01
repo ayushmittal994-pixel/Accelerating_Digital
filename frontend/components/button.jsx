@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export default function Button({ title, titleClass = "", href, onclick }) {
-  const buttonClasses = ` inline-block px-7 py-3 bg-black rounded-3xl m-3 text-white border-4 border-[#e5e7eb] font-semibold ${titleClass} `;
+  const buttonClasses = ` inline-block px-7 py-3 bg-black rounded-3xl m-3 text-white border-4 border-[#e5e7eb] cursor-pointer font-semibold ${titleClass} `;
 
   if (href) {
     return (

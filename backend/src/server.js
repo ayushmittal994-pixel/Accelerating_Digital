@@ -3,7 +3,6 @@ import dotenv from "dotenv";
 import { assertDbConnection } from "./db/pool.js";
 import ServerRoute from "./routes/ServerRoute.js";
 import cors from "cors";
-
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
@@ -12,7 +11,6 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use("/", ServerRoute);
-
 const PORT = process.env.PORT || 4000;
 assertDbConnection()
   .then(() => {
