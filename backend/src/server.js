@@ -12,6 +12,7 @@ app.use(express.json());
 app.use(cors());
 app.use("/", ServerRoute);
 const PORT = process.env.PORT || 4000;
+
 assertDbConnection()
   .then(() => {
     app.listen(PORT, () => {

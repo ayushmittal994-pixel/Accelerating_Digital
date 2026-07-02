@@ -96,7 +96,7 @@ export default function About() {
             { icon: "/Jahia.png", name: "Jahia" },
           ]}
           imageSize={200}
-          imageClass="w-auto h-auto  p-4"
+          imageClass="w-auto h-auto p-4"
           single={true}
         />
       </div>

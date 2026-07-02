@@ -11,7 +11,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="min-h-screen flex flex-col justify-between">
+      <body
+        className="min-h-screen flex flex-col justify-between"
+        suppressHydrationWarning
+      >
         <Navbar />
         {children}
         <Footer />

@@ -15,7 +15,7 @@ export default function TestimonialCard({
       >
         {quote}
       </p>
-      <div className="mt-auto p-4 ">
+      <div className=" mt-10 ">
         <div className={`text-[16px] text-[#1D252D] ${nameClass}`}>{name}</div>
         <div className=" text-[16px]text-sm font-normal text-[#122d25]">
           {role}

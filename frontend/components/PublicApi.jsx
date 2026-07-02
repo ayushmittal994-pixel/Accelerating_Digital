@@ -2,52 +2,85 @@
 
 import { useState, useEffect } from "react";
 
-export default function TechShowcase() {
-  const [repo, setRepo] = useState(null);
+export default function VisitorWidget() {
+  const [info, Setinfo] = useState(null);
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
-    // Fetch ONE specific repo, not all of them
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const { latitude, longitude } = position.coords;
+        fetchbyCoords(latitude, longitude);
+      });
+
+      () => {
+        fetchByIP();
+      };
+    } else {
+      fetchbyIP();
+    }
+  }, []);
+
+  function fetchbyCoords(lat, lon) {
     fetch(
-      "https://api.github.com/repos/ayushmittal994-pixel/Accelerating_Digital",
+      `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}`,
     )
       .then((res) => res.json())
       .then((data) => {
-        setRepo(data);
+        (Setinfo({
+          city: data.city || data.locality,
+          country: data.countryName,
+          region: data.principalSubdivision,
+          isp: "Detected via GPS",
+          flag: { emoji: "📍" },
+          success: true,
+        }),
+          setLoading(false));
+      })
+      .catch(() => fetchByIP());
+  }
+
+  function fetchbyIP() {
+    fetch("https://ipwhois.app/json/")
+      .then((res) => res.json())
+      .then((data) => {
+        Setinfo(data);
         setLoading(false);
       })
       .catch(() => setLoading(false));
-  }, []);
+  }
 
+  if (loading)
+    return (
+      <div className="flex items-center justify-center">
+        <div className="bg-white p-30 rounded-2xl p-6 max-w-sm text-gray-500 ">
+          Detecting Location..
+        </div>
+      </div>
+    );
+
+  if (!info || info.status === false) {
+    return (
+      <div className="bg-white border rounded-2xl p-6 max-w-sm text-gray-500">
+        Could not detect Location.
+      </div>
+    );
+  }
   return (
-    <section className="max-w-3xl mx-auto px-6 py-16">
-      <p className="text-[#137cc1] text-sm mb-2 ">Our Tech</p>
-      <h2 className="text-[40px] font-medium text-[#1d252d] mb-8">
-        This Project
-      </h2>
-
-      {loading ? (
-        <p className="text-gray-400">Loading project...</p>
-      ) : !repo || repo.message ? (
-        <p className="text-red-500">Could not load project.</p>
-      ) : (
-        <a
-          href={repo.html_url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="border border-gray-200 rounded-3xl p-8 bg-white hover:shadow-md transition block"
-        >
-          <h3 className="font-medium text-[#1d252d] text-2xl">{repo.name}</h3>
-          <p className="text-[#566470] mt-3">
-            {repo.description || "A full-stack case-studies platform."}
-          </p>
-          <div className="flex gap-6 mt-6 text-sm text-[#566470]">
-            {repo.language && <span>🛠 {repo.language}</span>}
-            <span>★ {repo.stargazers_count} stars</span>
-            <span>⑂ {repo.forks_count} forks</span>
+    <div className="flex items-center justify-center max-w-2xl mx-auto font-poppins pb-20 ">
+      <div className="bg-gradient-to-b from-[#137cc1] to-[#0a5a8f] text-white rounded-3xl p-6 max-w-sm shadow-lg w-full">
+        <p className="text-sm opacity-80">Welcome, visitor</p>
+        <div className="flex items-center gap-3 mt-2">
+          <span className="text-4xl">{info.flag?.emoji || "🌍"}</span>
+          <div>
+            <p className="text-2xl font-semibold">
+              {info.city}, {info.country}
+            </p>
+            <p className="text-sm opacity-80">{info.region}</p>
           </div>
-        </a>
-      )}
-    </section>
+        </div>
+        <p className="text-sm opacity-80 mt-4">ISP: {info.isp}</p>
+        <p className="text-xs opacity-60 mt-3">Location data by IPWhois</p>
+      </div>
+    </div>
   );
 }

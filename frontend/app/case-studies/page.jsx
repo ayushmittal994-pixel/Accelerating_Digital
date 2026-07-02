@@ -43,7 +43,9 @@ export default function CaseStudiesPage() {
         {loading ? (
           <p className="text-[#12252d] text-[32px]">Loading...</p>
         ) : caseStudies.length === 0 ? (
-          <h3>No Case Studies Found!!</h3>
+          <h3 className="text-xl text-[#12252d] pl-5 font-poppins">
+            No Case Studies Found!!
+          </h3>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {caseStudies.map((cs) => (

@@ -4,6 +4,7 @@ import Link from "next/link";
 import Form from "./form";
 import Breadcrumb from "@/components/breadcrumb";
 import TechShowcase from "@/components/PublicApi";
+import VisitorWidget from "@/components/PublicApi";
 
 export default function Contact() {
   return (
@@ -27,7 +28,7 @@ export default function Contact() {
       </section>
       <Breadcrumb />
       <Form />
-      <TechShowcase />
+      <VisitorWidget />
     </main>
   );
 }
