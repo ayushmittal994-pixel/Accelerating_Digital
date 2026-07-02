@@ -6,7 +6,7 @@ A full-stack clone of the Accelerating Digital website with a public marketing s
 
 - **Frontend**: Next.js 16 (App Router), React 19, Tailwind CSS 4, lucide-react, react-icons
 - **Backend**: Express 5, PostgreSQL (`pg`), JWT (`jsonwebtoken`), bcrypt, CORS, dotenv
-- **Public API:** Open-Meteo (weather) — sourced from publicapis.dev, no API key required
+- **Public API:** github — sourced from publicapis.dev, no API key required
 
 ## Features
 
