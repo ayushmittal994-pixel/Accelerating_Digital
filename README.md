@@ -14,7 +14,7 @@ A full-stack Accelerating Digital website with a public marketing site and a hid
 - Public case-studies list and dynamic detail pages (routed by slug)
 - Hidden admin login (`/login`), not linked in navigation, protected by JWT
 - Admin dashboard with full CRUD for case studies and a draft/published toggle
-- Auto-generating breadcrumb and a live weather widget
+- Auto-generating breadcrumb and a github widget.
 
 ## Project Structure
 
