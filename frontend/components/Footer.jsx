@@ -9,7 +9,7 @@ import { MdOutlinePhone } from "react-icons/md";
 
 import Link from "next/link";
 import Image from "next/image";
-import AdviceWidget from "./TechStack";
+import AdviceWidget from "./PublicApi";
 
 export default function Footer() {
   const links = [

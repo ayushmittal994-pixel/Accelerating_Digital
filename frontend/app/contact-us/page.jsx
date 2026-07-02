@@ -3,7 +3,7 @@ import SectionHeading from "@/components/sections/sectionheading";
 import Link from "next/link";
 import Form from "./form";
 import Breadcrumb from "@/components/breadcrumb";
-import TechShowcase from "@/components/TechStack";
+import TechShowcase from "@/components/PublicApi";
 
 export default function Contact() {
   return (
