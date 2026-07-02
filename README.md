@@ -156,7 +156,7 @@ curl -X POST http://localhost:4000/api/auth/login \
 
 - **navbar.jsx** — top navigation bar for the public site.
 - **Footer.jsx** — site footer.
-- - **sectionheading.jsx** — reusable section header (`label`, `title`, `summary`, plus style-override props).
+- **sectionheading.jsx** — reusable section header (`label`, `title`, `summary`, plus style-override props).
 - **button.jsx** — reusable button (`title`, `titleClass`, `href`, `onclick`).
 - **breadcrumb.jsx** — auto-builds from the URL path; Home and middle segments are clickable links, the current page is plain text.
 - **cards.jsx** — flexible card/logo grid with `single` and `vertical` variants.
