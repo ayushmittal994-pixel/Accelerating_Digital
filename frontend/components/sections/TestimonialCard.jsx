@@ -11,7 +11,7 @@ export default function TestimonialCard({
       className={`bg-white border border-gray-200 rounded-2xl p-6 h-full flex flex-col ${bgclass}`}
     >
       <p
-        className={` text-[#122D25]  text-center font-[16px] font-poppins leading-relaxed ${quoteclass} `}
+        className={` text-[#122D25]  text-left font-[16px] font-poppins leading-relaxed ${quoteclass} `}
       >
         {quote}
       </p>
