@@ -1,3 +1,4 @@
+import { twMerge } from "tailwind-merge";
 export default function SectionHeading({
   label,
   title,
@@ -7,10 +8,16 @@ export default function SectionHeading({
   titleClass = "",
   summaryClass = "",
   badgeBgClass = "",
+  wrapperClass = "",
 }) {
   return (
     //if true than apply all after true or else put all "" means empty
-    <div className={center ? "text-center max-w-4xl mx-auto" : ""}>
+    <div
+      className={twMerge(
+        center ? "text-center max-w-4xl mx-auto" : "",
+        wrapperClass,
+      )}
+    >
       <div
         className={`inline-flex items-center gap-2  border-[1]  rounded-xl px-3  ${center ? "justify-center" : ""} ${badgeBgClass}`}
       >

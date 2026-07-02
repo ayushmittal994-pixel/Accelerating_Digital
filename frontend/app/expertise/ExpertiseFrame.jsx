@@ -150,6 +150,7 @@ export default function ExpertiseFrame() {
               imageside={datas.imageside}
               centerContent={true}
               contentbg={datas.contentbg}
+              showButton={false}
             />
           );
         })}

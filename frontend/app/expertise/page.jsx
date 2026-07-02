@@ -4,6 +4,7 @@ import SectionHeading from "@/components/sections/sectionheading";
 import Link from "next/link";
 import ExpertiseFrame from "./ExpertiseFrame";
 import Cta from "@/components/sections/cta";
+import Breadcrumb from "@/components/breadcrumb";
 
 export default function Expertise() {
   return (
@@ -26,18 +27,10 @@ export default function Expertise() {
         />
       </section>
 
-      <div className=" max-w-7xl mx-auto py-8 flex items-center">
-        <Link href="/" className="text-[#137cc1] text-[16px]">
-          Home
-        </Link>
-        <p className="text-black pl-2">
-          <PiGreaterThan />
-        </p>
-        <p className="text-black pl-2 font-normal ">Expertise</p>
-      </div>
+      <Breadcrumb />
 
       <ExpertiseFrame />
-      <Cta/>
+      <Cta />
     </main>
   );
 }

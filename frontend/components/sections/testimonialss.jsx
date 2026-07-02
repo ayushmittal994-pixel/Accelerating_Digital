@@ -1,4 +1,5 @@
 import SectionHeading from "./sectionheading";
+import TestimonialCard from "./TestimonialCard";
 
 const testimonials = [
   {
@@ -39,21 +40,6 @@ const testimonials = [
   },
 ];
 
-function TestimonialCard({ quote, name, role }) {
-  return (
-    <div className="bg-white border border-gray-200 rounded-2xl p-6 h-full flex flex-col ">
-      <p className=" text-[#122D25]  font-[16px] font-poppins leading-relaxed">
-        {quote}
-      </p>
-      <div className="mt-auto p-4 ">
-        <div className="text-[16px] text-[#1D252D]">{name}</div>
-        <div className=" text-[16px]text-sm font-normal text-[#122d25]">
-          {role}
-        </div>
-      </div>
-    </div>
-  );
-}
 export default function Testimonialss() {
   return (
     <section className="max-w-6xl mx-auto md:mx-auto font-poppins  py-28 mb-10">

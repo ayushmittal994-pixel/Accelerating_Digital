@@ -9,6 +9,7 @@ import { MdOutlinePhone } from "react-icons/md";
 
 import Link from "next/link";
 import Image from "next/image";
+import AdviceWidget from "./weather";
 
 export default function Footer() {
   const links = [
