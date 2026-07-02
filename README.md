@@ -1,4 +1,4 @@
-# Accelerating Digital — Case Studies Platform
+# Accelerating Digital 
 
 A full-stack clone of the Accelerating Digital website with a public marketing site and a hidden admin dashboard for managing case studies. Built with **Next.js 16 + Tailwind CSS 4** on the frontend and an **Express 5 + PostgreSQL** backend secured with JWT authentication. Includes a github widget powered by a public API.
 
