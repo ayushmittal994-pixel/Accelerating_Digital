@@ -9,6 +9,7 @@ import { MdOutlinePhone } from "react-icons/md";
 
 import Link from "next/link";
 import Image from "next/image";
+import AdviceWidget from "./weather";
 
 export default function Footer() {
   const links = [
@@ -113,42 +114,3 @@ export default function Footer() {
     </footer>
   );
 }
-
-
-// "use client";
-
-// import { useRouter } from "next/navigation";
-// import { useState } from "react";
-
-// const API = "http://localhost:4000";
-
-// const EmptyForm = {
-//   slug: "",
-//   title: "",
-//   client: "",
-//   summary: "",
-//   body: "",
-//   cover_image: "",
-//   published: false,
-// };
-
-// export default function AdminPage() {
-//   const router = useRouter();
-
-//   const [token, SetToken] = useState("");
-//   const [caseStudies, SetcaseStudies] = [];
-//   const [form, SetForm] = useState(EmptyForm);
-//   const [editingId, SeteditingId] = null;
-//   const [loading, SetLoading] = useState(true);
-//   const [error, SetError] = useState("");
-
-//   // Auth guard — no token, go to login
-//   useEffect(() => {
-//     const t = localStorage.getItem("token");
-//     if (!t) {
-//       router.push("/login");
-//       return;
-//     }
-//     SetToken(t);
-//   }, [router]);
-// }

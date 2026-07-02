@@ -1,8 +1,10 @@
+import Button from "@/components/button";
+
 export default function Form() {
   return (
-    <form className="max-w-2xl mx-auto md:mx-auto flex items-center flex-col gap-6  mt-10 text-black mb-30">
+    <form className="max-w-xl mx-auto md:mx-auto flex items-center flex-col gap-6  mt-10 text-black mb-30">
       {/* Row 1: two fields side by side */}
-      <div className="flex flex-col w-120 h-140 gap-6 border shadow-sm p-5 rounded-2xl">
+      <div className=" w-full flex flex-col gap-6 bg-white border border-slate-100 shadow-xl shadow-slate-100/50 p-8 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:shadow-slate-100">
         <div className="flex flex-col gap-2">
           <label htmlFor="name" className="text-[16px]">
             Name
@@ -28,7 +30,7 @@ export default function Form() {
         </div>
 
         {/* Row 2: full-width message */}
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 ">
           <label htmlFor="message" className="text-[16px]">
             Message
           </label>
@@ -39,13 +41,13 @@ export default function Form() {
             className="border rounded-xl px-4 py-3"
           />
         </div>
-
-        <button
-          type="submit"
-          className="px-7 py-3 bg-black text-white rounded-2xl  items-center justify-center flex  font-semibold "
-        >
-          Submit
-        </button>
+        <div className="flex items-center justify-center">
+          <Button
+            Link
+            href={"mailto:hello@acceleratingdigital.ai"}
+            title="Submit"
+          />
+        </div>
       </div>
     </form>
   );

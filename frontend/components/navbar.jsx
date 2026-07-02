@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 import { HiMenu, HiX } from "react-icons/hi";
 import { useState } from "react";
 import Button from "./button";
-import WeatherWidet from "./weather";
 
 export default function Navbar() {
   const pathname = usePathname();

@@ -3,6 +3,7 @@ import SectionHeading from "@/components/sections/sectionheading";
 import Link from "next/link";
 import Form from "./form";
 import Breadcrumb from "@/components/breadcrumb";
+import TechShowcase from "@/components/weather";
 
 export default function Contact() {
   return (
@@ -26,6 +27,7 @@ export default function Contact() {
       </section>
       <Breadcrumb />
       <Form />
+      <TechShowcase />
     </main>
   );
 }

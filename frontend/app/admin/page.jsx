@@ -53,7 +53,7 @@ export default function () {
         return;
       }
       const data = await res.json();
-      SetCasestudies(data);
+      SetCasestudies(Array.isArray(data) ? data : []);
     } catch (error) {
       SetError("could not load Case Studies");
     } finally {
