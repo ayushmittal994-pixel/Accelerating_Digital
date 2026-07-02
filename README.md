@@ -1,12 +1,12 @@
-# Accelerating Digital 
+# Accelerating Digital
 
-A full-stack Accelerating Digital website with a public marketing site and a hidden admin dashboard for managing case studies. Built with **Next.js 16 + Tailwind CSS 4** on the frontend and an **Express 5 + PostgreSQL** backend secured with JWT authentication. Includes a github widget powered by a public API.
+A full-stack Accelerating Digital website with a public marketing site and a hidden admin dashboard for managing case studies. Built with **Next.js 16 + Tailwind CSS 4** on the frontend and an **Express 5 + PostgreSQL** backend secured with JWT authentication. Includes a live visitor-location widget powered by a public API.
 
 ## Tech Stack
 
-- **Frontend**: Next.js 16 (App Router), React 19, Tailwind CSS 4, lucide-react, react-icons
-- **Backend**: Express 5, PostgreSQL (`pg`), JWT (`jsonwebtoken`), bcrypt, CORS, dotenv
-- **Public API:** github — sourced from publicapis.dev, no API key required
+- **Frontend:** Next.js 16 (App Router), React 19, Tailwind CSS 4, lucide-react, react-icons
+- **Backend:** Express 5, PostgreSQL (`pg`), JWT (`jsonwebtoken`), bcrypt, CORS, dotenv
+- **Public API:** IPWhois — sourced from publicapis.dev, no API key required
 
 ## Features
 
@@ -14,7 +14,7 @@ A full-stack Accelerating Digital website with a public marketing site and a hid
 - Public case-studies list and dynamic detail pages (routed by slug)
 - Hidden admin login (`/login`), not linked in navigation, protected by JWT
 - Admin dashboard with full CRUD for case studies and a draft/published toggle
-- Auto-generating breadcrumb and a github widget.
+- Auto-generating breadcrumb and a live visitor-location widget
 
 ## Project Structure
 
@@ -152,32 +152,33 @@ curl -X POST http://localhost:4000/api/auth/login \
 
 ## Reusable Components
 
-
-
 - **navbar.jsx** — top navigation bar for the public site.
 - **Footer.jsx** — site footer.
 - **sectionheading.jsx** — reusable section header (`label`, `title`, `summary`, plus style-override props).
 - **button.jsx** — reusable button (`title`, `titleClass`, `href`, `onclick`).
 - **breadcrumb.jsx** — auto-builds from the URL path; Home and middle segments are clickable links, the current page is plain text.
 - **cards.jsx** — flexible card/logo grid with `single` and `vertical` variants.
-- **HowweworkReusbale.jsx** - t uses the imageside prop to control the side. It checks if imageside === "left" to render the image first. Otherwise, it     defaults to rendering the text first.
- - **cta.jsx** — call-to-action section.
- -  **servicecard.jsx** - create gradient cards.
+- **HowweworkReusbale.jsx** — reusable two-column section. It uses the `imageside` prop to control layout: if `imageside === "left"` it renders the image first, otherwise it defaults to rendering the text first.
+- **cta.jsx** — call-to-action section.
+- **servicecard.jsx** — renders gradient service cards.
 
-# Parent Component
+## Parent Components
 
 - **herosection.jsx** — landing hero.
-- **services.jsx** / — services 
-- **howwework.jsx**  — process section, with a reusable variant that has an optional button.
+- **services.jsx** — services section.
+- **howwework.jsx** — process section, with a reusable variant that has an optional button.
 - **techStack.jsx** — technology stack section.
 - **About.jsx** — about section.
-- **testimonialss.jsx** — testimonials section
+- **testimonialss.jsx** — testimonials section.
 - **faqs.jsx** — FAQ accordion section.
-
 
 ## Public API Integration
 
-This public API component dynamically fetches real-time metadata directly from GitHub for your Accelerating_Digital repository.
+The visitor-location widget uses the **IPWhois API** (sourced from publicapis.dev, Geocoding category). It auto-detects the visitor's location from their IP address — returning their city, country, region, and ISP — and displays it in a styled card.
+
+- Endpoint: `https://ipwhois.app/json/`
+- No API key required, CORS-friendly (called directly from the browser)
+- Attribution: Location data by IPWhois
 
 ## Notes
 
