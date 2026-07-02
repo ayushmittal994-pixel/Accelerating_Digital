@@ -4,8 +4,8 @@ A full-stack clone of the Accelerating Digital website with a public marketing s
 
 ## Tech Stack
 
-- Frontend: Next.js 16 (App Router), React 19, Tailwind CSS 4, lucide-react, react-icons
-- **Backend: Express 5, PostgreSQL (`pg`), JWT (`jsonwebtoken`), bcrypt, CORS, dotenv
+- **Frontend**: Next.js 16 (App Router), React 19, Tailwind CSS 4, lucide-react, react-icons
+- **Backend**: Express 5, PostgreSQL (`pg`), JWT (`jsonwebtoken`), bcrypt, CORS, dotenv
 - **Public API:** Open-Meteo (weather) — sourced from publicapis.dev, no API key required
 
 ## Features
@@ -152,34 +152,32 @@ curl -X POST http://localhost:4000/api/auth/login \
 
 ## Reusable Components
 
-Located in `frontend/components/`:
+
 
 - **navbar.jsx** — top navigation bar for the public site.
 - **Footer.jsx** — site footer.
+- - **sectionheading.jsx** — reusable section header (`label`, `title`, `summary`, plus style-override props).
 - **button.jsx** — reusable button (`title`, `titleClass`, `href`, `onclick`).
 - **breadcrumb.jsx** — auto-builds from the URL path; Home and middle segments are clickable links, the current page is plain text.
 - **cards.jsx** — flexible card/logo grid with `single` and `vertical` variants.
-- **weather.jsx** — live weather widget (Open-Meteo) with browser geolocation and a default-city fallback.
+- **HowweworkReusbale.jsx** - t uses the imageside prop to control the side. It checks if imageside === "left" to render the image first. Otherwise, it     defaults to rendering the text first.
+ - **cta.jsx** — call-to-action section.
+ -  **servicecard.jsx** - create gradient cards.
 
-In `frontend/components/sections/`:
+# Parent Component
 
 - **herosection.jsx** — landing hero.
-- **sectionheading.jsx** — reusable section header (`label`, `title`, `summary`, plus style-override props).
-- **services.jsx** / **servicecard.jsx** — services grid and card.
-- **howwework.jsx** / **HowweworkReusbale.jsx** — process section, with a reusable variant that has an optional button.
+- **services.jsx** / — services 
+- **howwework.jsx**  — process section, with a reusable variant that has an optional button.
 - **techStack.jsx** — technology stack section.
 - **About.jsx** — about section.
-- **testimonialss.jsx** / **TestimonialCard.jsx** — testimonials section and card.
+- **testimonialss.jsx** — testimonials section
 - **faqs.jsx** — FAQ accordion section.
-- **cta.jsx** — call-to-action section.
+
 
 ## Public API Integration
 
-The weather widget uses the [Open-Meteo API](https://open-meteo.com/) (listed on publicapis.dev, Weather category).
-
-- No API key required, CORS-friendly — called directly from the browser.
-- Endpoint: `https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&current=temperature_2m,weather_code,wind_speed_10m`
-- Attribution: Weather data by Open-Meteo (CC BY 4.0).
+This public API component dynamically fetches real-time metadata directly from GitHub for your Accelerating_Digital repository.
 
 ## Notes
 
